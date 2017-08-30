@@ -1,6 +1,6 @@
 <section class="pre-footer">
   <div class="container">
-    <p>MyEtherWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL. <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal"> You are responsible for your security.</a>
+    <p>MyFirstWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL. <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal"> You are responsible for your security.</a>
     </p>
   </div>
 </section>
@@ -13,55 +13,41 @@
 
       <a href="/"><img src="images/walletlogo_text_trans_eth.png" alt="MyFirstWallet.com" class="footer--logo"/></a>
 
-      <p><span translate="FOOTER_1">Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( .com ) before unlocking your wallet.</span></p>
-
-      <p><a aria-label="knowledge base" href="https://myetherwallet.groovehq.com/help_center" target="_blank" rel="noopener" role="link" tabindex="0">
-        Knowledge Base
-      </a></p>
-
-      <p><a href="https://www.myetherwallet.com/helpers.html" target="_blank" rel="noopener" role="link" tabindex="0">
-        Helpers &amp; ENS Debugging
-      </a></p>
-
-      <p><a href="https://www.myetherwallet.com/signmsg.html" target="_blank" rel="noopener" role="link" tabindex="0">
-        Sign Message
-      </a></p>
-
       <p><a data-target="#disclaimerModal" data-toggle="modal" target="_blank" rel="noopener" role="link" tabindex="0"  translate="FOOTER_4"> Disclaimer </a></p>
 
-      <p> &copy; 2017 MyEtherWallet, LLC </p>
+      <p> &copy; 2017 MyFirstWallet, LLC </p>
 
     </section>
 
     <section class="footer--cent">
         <h5> <i aria-hidden="true">👫</i> You can support us by supporting our blockchain-family.</h5>
         <p>Consider using our affiliate links to...</p>
-        <p><a aria-label="Swap Ether or Bitcoin via Bity.com" href="https://bity.com/af/jshkb37v" target="_blank" rel="noopener">Swap ETH/BTC/EUR/CHF via Bity.com</a></p>
+        <!--<p><a aria-label="Swap Ether or Bitcoin via Bity.com" href="https://bity.com/af/jshkb37v" target="_blank" rel="noopener">Swap ETH/BTC/EUR/CHF via Bity.com</a></p>-->
         <p><a href="https://www.ledgerwallet.com/r/fa4b?path=/products/" target="_blank" rel="noopener">Buy a Ledger Wallet</a></p>
-        <p><a href="https://trezor.io/?a=myetherwallet.com" target="_blank" rel="noopener">Buy a TREZOR</a></p>
-        <p><a href="https://digitalbitbox.com/?ref=mew" target="_blank" rel="noopener">Buy a Digital Bitbox</a></p>
+        <p><a href="https://trezor.io/?a=" target="_blank" rel="noopener">Buy a TREZOR</a></p>
+        <!--<p><a href="https://digitalbitbox.com/?ref=mew" target="_blank" rel="noopener">Buy a Digital Bitbox</a></p>-->
 
         <h5><i aria-hidden="true">💝</i> Donations are always appreciated!</h5>
-        <p>ETH: <span class="mono wrap">mewtopia.eth <small>0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8</small></span></p>
-        <p>BTC: <span class="mono wrap">1MEWT2SGbqtz6mPCgFcnea8XmWV5Z4Wc6</span></p>
+        <p>ETH: <span class="mono wrap">whatitis.eth <small>0x7cB57B5A97eAbe94205C07890BE4c1aD31er86A8</small></span></p>
+        <p>BTC: <span class="mono wrap">1MFW2SGbqtz6mPCgFcnarsee88yaXl8mWVr5brZah4Wc6</span></p>
         <!--
         <p>MYD: <span class="mono wrap">mewsupport.eth <small>0xf7e983781609012307f2514f63D526D83D24F466</small></span></p>
         -->
 
-        <h5 ng-hide="curLang=='en'"> <i>🏅</i> <span translate="Translator_Desc"> Thank you to our translators </span></h5>
+        <!--<h5 ng-hide="curLang=='en'"> <i>🏅</i> <span translate="Translator_Desc"> Thank you to our translators </span></h5>
         <p ng-hide="curLang=='en'">
           <span translate="TranslatorName_1"></span>
           <span translate="TranslatorName_2"></span>
           <span translate="TranslatorName_3"></span>
           <span translate="TranslatorName_4"></span>
           <span translate="TranslatorName_5"></span>
-        </p>
+        </p>-->
 
     </section>
 
     <section class="footer--righ">
 
-      <p><a aria-label="website via my ether wallet dot com" href="https://www.MyEtherWallet.com" target="_blank" rel="noopener" role="link" tabindex="0">
+      <!--<p><a aria-label="website via my ether wallet dot com" href="https://www.MyEtherWallet.com" target="_blank" rel="noopener" role="link" tabindex="0">
         MyEtherWallet.com
       </a></p>
 
@@ -87,7 +73,7 @@
 
       <p><a aria-label="Anti-Phishing chrome extension" href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener" role="link" tabindex="0">
         Anti-Phishing CX
-      </a></p>
+      </a></p>-->
 
       <p>
         <a aria-label="join our slack" href="https://myetherwallet.herokuapp.com/" target="_blank" rel="noopener" role="link" tabindex="0">Slack</a>

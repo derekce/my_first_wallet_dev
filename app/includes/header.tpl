@@ -2,7 +2,7 @@
 <html lang="en" ng-app="mewApp">
 <head>
 <meta charset="utf-8">
-<title>MyEtherWallet.com</title>
+<title>MyFirstWallet.com</title>
 <link rel="canonical" href="https://www.myetherwallet.com" />
 <meta name="description" content="MyEtherWallet.com is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( .com ) before unlocking your wallet.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
 
   @@if (site === 'mew' ) {
     <div class="small announcement annoucement-danger">
-      <div class="container">Always check the URL and look for MYETHERWALLET LLC [US] Certificate up there. Look for https://www.myetherwallet.com/. <a href="https://myetherwallet.groovehq.com/knowledge_base/topics/protecting-yourself-and-your-funds" target="_blank" rel="noopener">Be safe &amp; secure</a>.</div>
+      <div class="container">Always check the URL and look for MyFirstWallet LLC [US] Certificate up there. Look for https://www.myfirstwallet.com/. <a href="#" target="_blank" rel="noopener">Be safe &amp; secure</a>.</div>
     </div>
   }
 
@@ -57,8 +57,6 @@
         </a>
       }
       <div class="tagline">
-
-        <span>3.10.2.4</span>
 
         <!--<span class="dropdown dropdown-lang" ng-cloak>
           <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
@@ -139,7 +137,7 @@
         @@if (site === 'cx' ) {
         <li ng-repeat="tab in tabNames track by $index" class="nav-item {{tab.name}}" ng-class="{active: $index==gService.currentTab}" ng-show="tab.cx" ng-click="tabClick($index)"> <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a></li>
         }
-        <li class="nav-item help"><a href="https://myetherwallet.groovehq.com/help_center" target="_blank" rel="noopener">Help</a></li>
+        <li class="nav-item help"><a href="#" target="_blank" rel="noopener">Help</a></li>
       </ul>
     </div>
     <a aria-hidden="true" ng-show="showRightArrow" class="nav-arrow-right" ng-click="scrollRight(100);" ng-mouseover="scrollHoverIn(false,2);" ng-mouseleave="scrollHoverOut()">&#187;</a>

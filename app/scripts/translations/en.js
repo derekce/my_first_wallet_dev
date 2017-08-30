@@ -61,7 +61,11 @@ GAS_PRICE_Desc              : 'Gas Price is the amount you pay per unit of gas. 
 GAS_LIMIT_Desc              : 'Gas limit is the amount of gas to send with your TX. `TX fee` = gas price * gas limit & is paid to miners for including your TX in a block. Increasing this number will not get your TX mined faster. Sending ETH = `21000`. Sending Tokens = ~`200000`.',
 NONCE_Desc                  : 'The nonce is the number of transactions sent from a given address. It ensures transactions are sent in order & not more than once.',
 TXFEE_Desc                  : 'The TX Fee is paid to miners for including your TX in a block. Is is the `gas limit` * `gas price`. [You can convert GWEI -> ETH here](https://www.myetherwallet.com/helpers.html)',
-
+GEN_Continue				: "Continue",
+GEN_Warn_1					: "I've saved my private key or printed my paper wallet.", 
+GEN_Warn_2					: "Warning! This is the last time you will see your private key. Make sure you have it saved.",  
+GEN_Label_Unlock_1			: "Congratulations!", 
+GEN_Label_Unlock_2			: "You now have your first wallet. Since we don't store your passphrase, you will need to enter it below to view your wallet. Please enter it now.", 
 
 /* Navigation*/
 NAV_AddWallet               : 'Add Wallet ',
@@ -93,8 +97,8 @@ x_CSV                       : 'CSV file (unencrypted) ',
 x_Download                  : 'Download ',
 x_Json                      : 'JSON File (unencrypted) ',
 x_JsonDesc                  : 'This is the unencrypted, JSON format of your private key. This means you do not need the password but anyone who finds your JSON can access your wallet & Ether without the password. ',
-x_Keystore                  : 'Backup Keystore File (UTC / JSON · Recommended · Encrypted) ',
-x_Keystore2                 : 'Backup Keystore File (UTC / JSON) ',
+x_Keystore                  : 'Backup Keystore File (Recommended · Encrypted) ',
+x_Keystore2                 : 'Backup Keystore File ',
 x_KeystoreDesc              : 'This Keystore file matches the format used by Mist so you can easily import it in the future. It is the recommended file to download and back up. ',
 x_MetaMask                  : 'Metamask / Mist ',
 x_Mnemonic                  : 'Mnemonic Phrase ',

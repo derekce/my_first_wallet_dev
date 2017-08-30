@@ -53,7 +53,7 @@
       <h5 translate="x_Address">Your Address:</h5>
       <div class="qr-code" qr-code="{{wallet.getChecksumAddressString()}}" watch-var="wallet" width="100%"></div>
     </div>
-    <div class="col-xs-6">
+    <!--<div class="col-xs-6">
       <h5 ng-show="wallet.type=='default'">
         <span translate="x_PrivKey">Private Key (unencrypted)</span>
       </h5>
@@ -65,7 +65,7 @@
           <span tabindex="0" aria-label="make private key visible" role="button" class="input-group-addon eye" ng-click="showHidePkey()"></span>
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
 
 </article>

@@ -5,7 +5,7 @@
     <section class="block__main gen__1--inner">
       <br />
       <h1 translate="NAV_GenerateWallet" aria-live="polite"> Create New Wallet</h1>
-      <h4 translate="GEN_Label_1"> Enter password </h4>
+      <h4 translate="GEN_Label_1"> Enter passphrase </h4>
       <div class="input-group">
         <input name="password"
              class="form-control"
@@ -13,17 +13,22 @@
              placeholder="{{'GEN_Placeholder_1' | translate }}"
              ng-model="password"
              ng-class="isStrongPass() ? 'is-valid' : 'is-invalid'"
-             aria-label="{{'GEN_Label_1' |translate}}"/>
+             aria-label="{{'GEN_Label_1' |translate}}"
+             id="passw_field"
+             />
         <span tabindex="0" aria-label="make password visible" role="button" class="input-group-addon eye" ng-click="showPass=!showPass"></span>
       </div>
-      <h4 translate="GEN_Label_Confirm"> Confirm password </h4>
+      <h4 translate="GEN_Label_Confirm"> Confirm passphrase </h4>
       <div class="input-group" style="display: flex;">
         <input name="confirm_password"
              class="form-control"
              type="password"
+             placeholder="Please confirm password"
              ng-model="confirm_password"
              ng-class="ConfirmPass() ? 'is-valid' : 'is-invalid'"
-             aria-label="{{'GEN_Label_1' |translate}}"/>
+             aria-label="{{'GEN_Label_1' |translate}}"
+             id="confirm_passw_field"
+             />
       </div>
       <a tabindex="0" role="button" class="btn btn-primary" func="generateSingleWallet" ng-click="genNewWallet()" translate="NAV_GenerateWallet">Generate Wallet</a>
       <p translate="x_PasswordDesc"> </p>
@@ -47,7 +52,7 @@
          aria-describedby="x_KeystoreDesc"
          ng-click="downloaded()"
          target="_blank" rel="noopener">
-        <span translate="x_Download"> DOWNLOAD </span> <span translate="x_Keystore2"> Backup File (UTC / JSON) </span>
+        <span translate="x_Download"> DOWNLOAD </span> <span translate="x_Keystore2"> Backup File </span>
       </a>
 
       <div class="warn">
@@ -92,10 +97,17 @@
       </div>
 
       <br />
+       <div class="warn">
+        <p><span translate="GEN_Warn_1"><strong>I've saved my private key or printed my paper wallet.</strong></span></p>
 
+      </div>
       <a class="btn btn-default btn-sm" ng-click="getAddress()">
-        <span translate="GEN_Label_3"> Save your Address </span> →
+        <span translate="GEN_Continue"> Continue </span> →
       </a>
+
+      <div class="warn">
+        <p><span translate="GEN_Warn_2"><strong>Warning!</strong> This is the last time you will see your private key. Make sure you have it saved.</span></p>
+      </div>
 
     </section>
 
@@ -105,8 +117,8 @@
     <div class="clearfix collapse-container">
       <div ng-click="wd = !wd">
         <a class="collapse-button"><span ng-show="wd">+</span><span ng-show="!wd">-</span></a>
-        <h1 traslate="GEN_Unlock">Unlock your wallet to see your address</h1>
-        <p translate="x_AddessDesc"></p>
+        <h1 translate="GEN_Label_Unlock_1">Congratulations!</h1>
+        <p translate="GEN_Label_Unlock_2">You now have your first wallet. Since we don't store your passphrase, you will need to enter it below to view your wallet. Please enter it now.</p>
       </div>
       <div ng-show="!wd">
           @@if (site === 'mew' ) {  <wallet-decrypt-drtv></wallet-decrypt-drtv>         }

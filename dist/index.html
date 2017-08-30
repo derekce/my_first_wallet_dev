@@ -3,7 +3,7 @@
 <html lang="en" ng-app="mewApp">
 <head>
 <meta charset="utf-8">
-<title>MyEtherWallet.com</title>
+<title>MyFirstWallet.com</title>
 <link rel="canonical" href="https://www.myetherwallet.com" />
 <meta name="description" content="MyEtherWallet.com is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( .com ) before unlocking your wallet.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +35,7 @@
 
   
     <div class="small announcement annoucement-danger">
-      <div class="container">Always check the URL and look for MYETHERWALLET LLC [US] Certificate up there. Look for https://www.myetherwallet.com/. <a href="https://myetherwallet.groovehq.com/knowledge_base/topics/protecting-yourself-and-your-funds" target="_blank" rel="noopener">Be safe &amp; secure</a>.</div>
+      <div class="container">Always check the URL and look for MyFirstWallet LLC [US] Certificate up there. Look for https://www.myfirstwallet.com/. <a href="#" target="_blank" rel="noopener">Be safe &amp; secure</a>.</div>
     </div>
   
 
@@ -49,8 +49,6 @@
       
       
       <div class="tagline">
-
-        <span>3.10.2.4</span>
 
         <!--<span class="dropdown dropdown-lang" ng-cloak>
           <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
@@ -129,7 +127,7 @@
         <li ng-repeat="tab in tabNames track by $index" class="nav-item {{tab.name}}" ng-class="{active: $index==gService.currentTab}" ng-show="tab.mew" ng-click="tabClick($index)"> <a tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a></li>
         
         
-        <li class="nav-item help"><a href="https://myetherwallet.groovehq.com/help_center" target="_blank" rel="noopener">Help</a></li>
+        <li class="nav-item help"><a href="#" target="_blank" rel="noopener">Help</a></li>
       </ul>
     </div>
     <a aria-hidden="true" ng-show="showRightArrow" class="nav-arrow-right" ng-click="scrollRight(100);" ng-mouseover="scrollHoverIn(false,2);" ng-mouseleave="scrollHoverOut()">&#187;</a>
@@ -232,7 +230,7 @@
     <section class="block__main gen__1--inner">
       <br />
       <h1 translate="NAV_GenerateWallet" aria-live="polite"> Create New Wallet</h1>
-      <h4 translate="GEN_Label_1"> Enter password </h4>
+      <h4 translate="GEN_Label_1"> Enter passphrase </h4>
       <div class="input-group">
         <input name="password"
              class="form-control"
@@ -240,17 +238,22 @@
              placeholder="{{'GEN_Placeholder_1' | translate }}"
              ng-model="password"
              ng-class="isStrongPass() ? 'is-valid' : 'is-invalid'"
-             aria-label="{{'GEN_Label_1' |translate}}"/>
+             aria-label="{{'GEN_Label_1' |translate}}"
+             id="passw_field"
+             />
         <span tabindex="0" aria-label="make password visible" role="button" class="input-group-addon eye" ng-click="showPass=!showPass"></span>
       </div>
-      <h4 translate="GEN_Label_Confirm"> Confirm password </h4>
+      <h4 translate="GEN_Label_Confirm"> Confirm passphrase </h4>
       <div class="input-group" style="display: flex;">
         <input name="confirm_password"
              class="form-control"
              type="password"
+             placeholder="Please confirm password"
              ng-model="confirm_password"
              ng-class="ConfirmPass() ? 'is-valid' : 'is-invalid'"
-             aria-label="{{'GEN_Label_1' |translate}}"/>
+             aria-label="{{'GEN_Label_1' |translate}}"
+             id="confirm_passw_field"
+             />
       </div>
       <a tabindex="0" role="button" class="btn btn-primary" func="generateSingleWallet" ng-click="genNewWallet()" translate="NAV_GenerateWallet">Generate Wallet</a>
       <p translate="x_PasswordDesc"> </p>
@@ -274,7 +277,7 @@
          aria-describedby="x_KeystoreDesc"
          ng-click="downloaded()"
          target="_blank" rel="noopener">
-        <span translate="x_Download"> DOWNLOAD </span> <span translate="x_Keystore2"> Backup File (UTC / JSON) </span>
+        <span translate="x_Download"> DOWNLOAD </span> <span translate="x_Keystore2"> Backup File </span>
       </a>
 
       <div class="warn">
@@ -319,10 +322,17 @@
       </div>
 
       <br />
+       <div class="warn">
+        <p><span translate="GEN_Warn_1"><strong>I've saved my private key or printed my paper wallet.</strong></span></p>
 
+      </div>
       <a class="btn btn-default btn-sm" ng-click="getAddress()">
-        <span translate="GEN_Label_3"> Save your Address </span> →
+        <span translate="GEN_Continue"> Continue </span> →
       </a>
+
+      <div class="warn">
+        <p><span translate="GEN_Warn_2"><strong>Warning!</strong> This is the last time you will see your private key. Make sure you have it saved.</span></p>
+      </div>
 
     </section>
 
@@ -332,8 +342,8 @@
     <div class="clearfix collapse-container">
       <div ng-click="wd = !wd">
         <a class="collapse-button"><span ng-show="wd">+</span><span ng-show="!wd">-</span></a>
-        <h1 traslate="GEN_Unlock">Unlock your wallet to see your address</h1>
-        <p translate="x_AddessDesc"></p>
+        <h1 translate="GEN_Label_Unlock_1">Congratulations!</h1>
+        <p translate="GEN_Label_Unlock_2">You now have your first wallet. Since we don't store your passphrase, you will need to enter it below to view your wallet. Please enter it now.</p>
       </div>
       <div ng-show="!wd">
             <wallet-decrypt-drtv></wallet-decrypt-drtv>         
@@ -399,7 +409,7 @@
       <h5 translate="x_Address">Your Address:</h5>
       <div class="qr-code" qr-code="{{wallet.getChecksumAddressString()}}" watch-var="wallet" width="100%"></div>
     </div>
-    <div class="col-xs-6">
+    <!--<div class="col-xs-6">
       <h5 ng-show="wallet.type=='default'">
         <span translate="x_PrivKey">Private Key (unencrypted)</span>
       </h5>
@@ -411,7 +421,7 @@
           <span tabindex="0" aria-label="make private key visible" role="button" class="input-group-addon eye" ng-click="showHidePkey()"></span>
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
 
 </article>
@@ -765,7 +775,7 @@
       <h5 translate="x_Address">Your Address:</h5>
       <div class="qr-code" qr-code="{{wallet.getChecksumAddressString()}}" watch-var="wallet" width="100%"></div>
     </div>
-    <div class="col-xs-6">
+    <!--<div class="col-xs-6">
       <h5 ng-show="wallet.type=='default'">
         <span translate="x_PrivKey">Private Key (unencrypted)</span>
       </h5>
@@ -777,7 +787,7 @@
           <span tabindex="0" aria-label="make private key visible" role="button" class="input-group-addon eye" ng-click="showHidePkey()"></span>
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
 
 </article>
@@ -819,7 +829,7 @@
 
 <section class="pre-footer">
   <div class="container">
-    <p>MyEtherWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL. <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal"> You are responsible for your security.</a>
+    <p>MyFirstWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL. <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal"> You are responsible for your security.</a>
     </p>
   </div>
 </section>
@@ -832,55 +842,41 @@
 
       <a href="/"><img src="images/walletlogo_text_trans_eth.png" alt="MyFirstWallet.com" class="footer--logo"/></a>
 
-      <p><span translate="FOOTER_1">Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( .com ) before unlocking your wallet.</span></p>
-
-      <p><a aria-label="knowledge base" href="https://myetherwallet.groovehq.com/help_center" target="_blank" rel="noopener" role="link" tabindex="0">
-        Knowledge Base
-      </a></p>
-
-      <p><a href="https://www.myetherwallet.com/helpers.html" target="_blank" rel="noopener" role="link" tabindex="0">
-        Helpers &amp; ENS Debugging
-      </a></p>
-
-      <p><a href="https://www.myetherwallet.com/signmsg.html" target="_blank" rel="noopener" role="link" tabindex="0">
-        Sign Message
-      </a></p>
-
       <p><a data-target="#disclaimerModal" data-toggle="modal" target="_blank" rel="noopener" role="link" tabindex="0"  translate="FOOTER_4"> Disclaimer </a></p>
 
-      <p> &copy; 2017 MyEtherWallet, LLC </p>
+      <p> &copy; 2017 MyFirstWallet, LLC </p>
 
     </section>
 
     <section class="footer--cent">
         <h5> <i aria-hidden="true">👫</i> You can support us by supporting our blockchain-family.</h5>
         <p>Consider using our affiliate links to...</p>
-        <p><a aria-label="Swap Ether or Bitcoin via Bity.com" href="https://bity.com/af/jshkb37v" target="_blank" rel="noopener">Swap ETH/BTC/EUR/CHF via Bity.com</a></p>
+        <!--<p><a aria-label="Swap Ether or Bitcoin via Bity.com" href="https://bity.com/af/jshkb37v" target="_blank" rel="noopener">Swap ETH/BTC/EUR/CHF via Bity.com</a></p>-->
         <p><a href="https://www.ledgerwallet.com/r/fa4b?path=/products/" target="_blank" rel="noopener">Buy a Ledger Wallet</a></p>
-        <p><a href="https://trezor.io/?a=myetherwallet.com" target="_blank" rel="noopener">Buy a TREZOR</a></p>
-        <p><a href="https://digitalbitbox.com/?ref=mew" target="_blank" rel="noopener">Buy a Digital Bitbox</a></p>
+        <p><a href="https://trezor.io/?a=" target="_blank" rel="noopener">Buy a TREZOR</a></p>
+        <!--<p><a href="https://digitalbitbox.com/?ref=mew" target="_blank" rel="noopener">Buy a Digital Bitbox</a></p>-->
 
         <h5><i aria-hidden="true">💝</i> Donations are always appreciated!</h5>
-        <p>ETH: <span class="mono wrap">mewtopia.eth <small>0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8</small></span></p>
-        <p>BTC: <span class="mono wrap">1MEWT2SGbqtz6mPCgFcnea8XmWV5Z4Wc6</span></p>
+        <p>ETH: <span class="mono wrap">whatitis.eth <small>0x7cB57B5A97eAbe94205C07890BE4c1aD31er86A8</small></span></p>
+        <p>BTC: <span class="mono wrap">1MFW2SGbqtz6mPCgFcnarsee88yaXl8mWVr5brZah4Wc6</span></p>
         <!--
         <p>MYD: <span class="mono wrap">mewsupport.eth <small>0xf7e983781609012307f2514f63D526D83D24F466</small></span></p>
         -->
 
-        <h5 ng-hide="curLang=='en'"> <i>🏅</i> <span translate="Translator_Desc"> Thank you to our translators </span></h5>
+        <!--<h5 ng-hide="curLang=='en'"> <i>🏅</i> <span translate="Translator_Desc"> Thank you to our translators </span></h5>
         <p ng-hide="curLang=='en'">
           <span translate="TranslatorName_1"></span>
           <span translate="TranslatorName_2"></span>
           <span translate="TranslatorName_3"></span>
           <span translate="TranslatorName_4"></span>
           <span translate="TranslatorName_5"></span>
-        </p>
+        </p>-->
 
     </section>
 
     <section class="footer--righ">
 
-      <p><a aria-label="website via my ether wallet dot com" href="https://www.MyEtherWallet.com" target="_blank" rel="noopener" role="link" tabindex="0">
+      <!--<p><a aria-label="website via my ether wallet dot com" href="https://www.MyEtherWallet.com" target="_blank" rel="noopener" role="link" tabindex="0">
         MyEtherWallet.com
       </a></p>
 
@@ -906,7 +902,7 @@
 
       <p><a aria-label="Anti-Phishing chrome extension" href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener" role="link" tabindex="0">
         Anti-Phishing CX
-      </a></p>
+      </a></p>-->
 
       <p>
         <a aria-label="join our slack" href="https://myetherwallet.herokuapp.com/" target="_blank" rel="noopener" role="link" tabindex="0">Slack</a>
